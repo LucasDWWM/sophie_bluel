@@ -57,7 +57,7 @@ body {
 	max-width: 1140px;
 	margin: 0 auto;
 	padding: 0 20px;
-	margin-bottom: 335px;
+	margin-bottom: 313px;
 }
 
 header {
@@ -319,7 +319,6 @@ footer nav ul {
 }
 
 .mentions_legales {
-  font-size: 14px;
   font-family: 'Work Sans', sans-serif;
-  margin-right: 200px;
 }
+
