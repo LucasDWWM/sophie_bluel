@@ -100,7 +100,7 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
-	margin-left: 30px;
+	margin-left: 35px;
 }
 
 li:hover {
@@ -320,5 +320,6 @@ footer nav ul {
 
 .mentions_legales {
   font-family: 'Work Sans', sans-serif;
+  margin-right: 195px;
 }
 
