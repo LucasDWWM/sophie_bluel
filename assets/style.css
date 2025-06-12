@@ -134,6 +134,32 @@ li:hover {
 	margin-bottom: 1em;
 }
 
+.portfolio-header {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin-bottom: 1rem;
+}
+
+.btn-edit {
+	background: none;
+	border: none;
+	color: #1D6154;
+	cursor: pointer;
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.btn-edit::before {
+	content: url('./icons/vector.png');
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+
 .gallery {
 	width: 100%;
 	display: grid;
