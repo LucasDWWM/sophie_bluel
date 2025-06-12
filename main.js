@@ -103,15 +103,4 @@
     if (filters) {
       filters.style.display = "none";
     }
-
-    // Empêche les duplications de la barre d’édition
-  const header = document.querySelector("header");
-    const editBar = document.createElement("div");
-    editBar.className = "edit-bar";
-    editBar.innerHTML = `<button id="edit-gallery">Éditer la galerie</button>`;
-    header.after(editBar);
   }
-
-
-
-
