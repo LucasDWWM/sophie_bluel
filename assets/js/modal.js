@@ -36,7 +36,6 @@ function displayModalProjects(works) {
     figure.innerHTML = `
       <img src="${work.imageUrl}" alt="${work.title}">
       <figcaption>
-        <span class="edit-text">éditer</span>
         <button class="delete-btn" aria-label="Supprimer">🗑️</button>
       </figcaption>
     `;
@@ -46,6 +45,89 @@ function displayModalProjects(works) {
     deleteBtn.addEventListener("click", () => deleteProject(work.id, figure));
   });
 }
+
+const addProjectForm = document.getElementById("add-project-form");
+const projectForm = document.getElementById("project-form");
+const categorySelect = document.getElementById("category");
+const imageInput = document.getElementById("image");
+const imagePreview = document.getElementById("image-preview");
+
+// Bouton pour afficher formulaire d'ajout
+function showAddProjectForm() {
+  modalGallery.classList.add("hidden");
+  addProjectForm.classList.remove("hidden");
+  loadCategories();
+}
+
+// Charger les catégories dans le <select>
+async function loadCategories() {
+  try {
+    const res = await fetch("http://localhost:5678/api/categories");
+    const categories = await res.json();
+    categorySelect.innerHTML = "";
+    categories.forEach(cat => {
+      const option = document.createElement("option");
+      option.value = cat.id;
+      option.textContent = cat.name;
+      categorySelect.appendChild(option);
+    });
+  } catch (err) {
+    console.error("Erreur chargement catégories :", err);
+  }
+}
+
+// Affichage image preview
+imageInput.addEventListener("change", () => {
+  const file = imageInput.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      imagePreview.src = reader.result;
+      imagePreview.classList.remove("hidden");
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// Soumission du formulaire
+projectForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (!token) return alert("Non autorisé");
+
+  const formData = new FormData();
+  formData.append("image", imageInput.files[0]);
+  formData.append("title", document.getElementById("title").value);
+  formData.append("category", categorySelect.value);
+
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      body: formData
+    });
+
+    if (!res.ok) throw new Error("Erreur ajout projet");
+
+    // Remet la modale d’origine
+    addProjectForm.classList.add("hidden");
+    modalGallery.classList.remove("hidden");
+
+    // Recharge la modale + galerie principale
+    fetchModalProjects();
+    if (typeof fetchWorks === "function") fetchWorks();
+  } catch (err) {
+    console.error("Erreur envoi projet :", err);
+  }
+});
+
+const addProjectBtn = document.getElementById("add-project-btn");
+if (addProjectBtn) {
+  addProjectBtn.addEventListener("click", showAddProjectForm);
+}
+
+
 
 // Supprime un projet
 async function deleteProject(id, figureEl) {

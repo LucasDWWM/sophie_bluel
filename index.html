@@ -71,13 +71,50 @@
 		</ul>
 	</nav>
 </footer>
+
+<!-- MODAL  -->
 <div id="modal" class="modal hidden">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>Galerie photo</h2>
-    <div id="modal-gallery" class="modal-gallery"></div>
+
+    <div id="modal-gallery-view">
+      <h2>Galerie photo</h2>
+
+      <!-- Galerie des projets -->
+      <div id="modal-gallery" class="modal-gallery"></div>
+
+      <!-- Bouton ajouter un projet -->
+      <button id="add-project-btn">Ajouter un projet</button>
+    </div>
+
+    <!-- Formulaire ajout de projet -->
+    <div id="add-project-form" class="modal-form hidden">
+      <button type="button" id="back-to-gallery" class="back-btn">&larr;</button>
+      <form id="project-form">
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" id="image" name="image" accept="image/*" required>
+          <img id="image-preview" class="hidden" alt="Aperçu image" style="max-width: 100px; margin-top: 10px;">
+        </div>
+        <div class="form-group">
+          <label for="title">Titre</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="category">Catégorie</label>
+          <select id="category" name="category" required>
+            <option value="">Choisir une catégorie</option>
+            <option value="1">Objets</option>
+            <option value="2">Appartements</option>
+            <option value="3">Hôtels & restaurants</option>
+          </select>
+        </div>
+        <button type="submit">Valider</button>
+      </form>
+    </div>
   </div>
 </div>
+
 
 </body>
 </html>
