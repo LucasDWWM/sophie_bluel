@@ -353,7 +353,11 @@ footer nav ul {
   margin-right: 195px;
 }
 
-.modal {
+/* =======================
+   MODALES GÉNÉRIQUES
+======================= */
+#modal-gallery,
+#modal-add {
   position: fixed;
   top: 0;
   left: 0;
@@ -366,11 +370,13 @@ footer nav ul {
   z-index: 1000;
 }
 
-.modal.hidden {
+#modal-gallery.hidden,
+#modal-add.hidden {
   display: none;
 }
 
-.modal-content {
+#modal-gallery .modal-content,
+#modal-add .modal-content {
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
@@ -380,7 +386,8 @@ footer nav ul {
   position: relative;
 }
 
-.modal .close {
+#modal-gallery .close,
+#modal-add .close {
   position: absolute;
   right: 20px;
   top: 15px;
@@ -388,17 +395,23 @@ footer nav ul {
   cursor: pointer;
 }
 
-.modal-gallery {
+/* =======================
+   GALERIE DE LA MODALE
+======================= */
+#modal-gallery-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: 20px;
 }
 
-.modal-gallery img {
+#modal-gallery-content img {
   width: 100%;
 }
 
+/* =======================
+   FORMULAIRE
+======================= */
 .back-btn {
   position: absolute;
   top: 20px;
@@ -416,10 +429,23 @@ footer nav ul {
   background-color: #ccc;
 }
 
-
-#add-project-btn {
+/* =======================
+   BOUTON AJOUT
+======================= */
+#open-add-modal {
   display: block;
   margin: 20px auto;
+  background-color: #1D6154;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 60px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#submit-btn {
+  margin-top: 20px;
   background-color: #1D6154;
   color: white;
   padding: 10px 20px;
