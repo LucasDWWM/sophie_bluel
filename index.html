@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="./main.js"></script>
 	<script type="module" src="./assets/js/modal.js"></script>
+	<script type="module" src="./js/addProjectModal.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -77,12 +79,15 @@
   <div class="modal-content">
     <span class="close">&times;</span>
 
+    <!-- AJOUT ICI -->
     <div id="modal-gallery-view">
       <h2>Galerie photo</h2>
 
       <!-- Galerie des projets -->
       <div id="modal-gallery" class="modal-gallery"></div>
 
+	  <hr class="modal-separator">
+	  
       <!-- Bouton ajouter un projet -->
       <button id="add-project-btn">Ajouter un projet</button>
     </div>
@@ -114,7 +119,6 @@
     </div>
   </div>
 </div>
-
 
 </body>
 </html>
