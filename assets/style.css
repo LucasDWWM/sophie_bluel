@@ -399,6 +399,8 @@ footer nav ul {
    GALERIE DE LA MODALE
 ======================= */
 #modal-gallery-content {
+  position: relative;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -409,15 +411,21 @@ footer nav ul {
   width: 100%;
 }
 
+#modal-gallery-content figure {
+  position: relative;
+  margin: 0;
+}
+
 .figure-wrapper {
-  position: absolute;
+  position: relative;
   width: 100%;
+  height: auto;
 }
 
 .figure-wrapper img {
-  display: block;
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 4px;
 }
 
@@ -428,7 +436,7 @@ footer nav ul {
   background-color: black;
   color: white;
   border: none;
-  border-radius: 50%;
+  border-radius: 15%;
   padding: 6px 8px;
   font-size: 14px;
   cursor: pointer;
@@ -438,6 +446,7 @@ footer nav ul {
 .delete-btn:hover {
   background-color: #333;
 }
+
 
 
 /* =======================
