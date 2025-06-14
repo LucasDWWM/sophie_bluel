@@ -88,14 +88,21 @@
 <!-- MODALE 2 : Ajout de projet -->
 <div id="modal-add" class="modal hidden">
   <div class="modal-content">
+	<span class="close close-add">&times;</span>
     <button type="button" id="back-to-gallery" class="back-btn">&larr;</button>
     <form id="project-form">
       <h2>Ajout photo</h2>
       <div class="form-group">
-        <label for="image">Image</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
-        <img id="image-preview" class="hidden" alt="Aperçu image" style="display: block; max-width: 200px; margin: 10px auto;">
-      </div>
+			<div class="drop-zone" id="drop-zone">
+				<input type="file" id="image" accept="image/*" hidden />
+				<div id="drop-zone-content">
+					<img src="./assets/icons/picture-svgrepo-com 1.png" class="drop-icon" alt="icone ajout" />
+					<p class="drop-text">+ Ajouter photo</p>
+					<p class="drop-subtext">jpg, png : 4mo max</p>
+				</div>
+				<img id="image-preview" class="hidden" />
+			</div>
+	  </div>
       <div class="form-group">
         <label for="title">Titre</label>
         <input type="text" id="title" name="title" required>
@@ -104,6 +111,7 @@
         <label for="category">Catégorie</label>
         <select id="category" name="category" required></select>
       </div>
+	  <hr class="modal-separator">
       <button type="submit" id="submit-btn" disabled>Valider</button>
     </form>
   </div>

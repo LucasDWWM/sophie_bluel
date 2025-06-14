@@ -409,6 +409,37 @@ footer nav ul {
   width: 100%;
 }
 
+.figure-wrapper {
+  position: absolute;
+  width: 100%;
+}
+
+.figure-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 6px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.delete-btn:hover {
+  background-color: #333;
+}
+
+
 /* =======================
    FORMULAIRE
 ======================= */
@@ -445,13 +476,141 @@ footer nav ul {
 }
 
 #submit-btn {
+	display: block;
+	margin: 20px auto;
+	background-color: #1D6154;
+	color: white;
+	padding: 11px 65px;
+	border-radius: 60px;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+#submit-btn:disabled {
+  background-color: #A7A7A7;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* =======================
+   GLISSER DEPOSER
+======================= */
+
+/* MODALE : Zone d’ajout photo */
+.drop-zone {
+  position: relative;
+  background-color: #E8F1F6;
+  border-radius: 3px;
+  width: 100%;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#drop-zone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.drop-icon {
+  width: 58px;
+  height: auto;
+}
+
+.drop-text {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #306685;
+}
+
+.drop-subtext {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 10px;
+  color: #444;
+}
+
+/* Image preview dans la drop-zone */
+#image-preview {
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  border-radius: 3px;
+}
+
+
+[data-has-image="true"] #drop-zone-content {
+  display: none;
+}
+
+[data-has-image="true"] #image-preview {
+  display: block;
+}
+
+
+/* FORMULAIRE : champs texte et select */
+.form-group {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
+}
+
+.form-group label {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  padding: 0 15px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  outline: none;
+}
+
+/* BOUTON VALIDER */
+#submit-btn {
   background-color: #1D6154;
   color: white;
-  padding: 10px 20px;
-  border-radius: 60px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
   border: none;
-  font-weight: bold;
+  border-radius: 60px;
+  padding: 10px 40px;
+  margin: 20px auto 0;
+  display: block;
   cursor: pointer;
+  transition: 0.3s ease;
 }
+
+#submit-btn:disabled {
+  background-color: #A7A7A7;
+  cursor: default;
+}
+
+/* Séparateur */
+.modal-separator {
+  border: none;
+  height: 1px;
+  background-color: #B3B3B3;
+  margin-top: 30px;
+}
+
+
 
