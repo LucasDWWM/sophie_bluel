@@ -78,7 +78,7 @@
   function createFilterButton(name, onClick) {
     const button = document.createElement("button");
     button.textContent = name;
-    button.classList.add("filter-btn"); // Classe CSS
+    button.classList.add("filter-btn");
     button.addEventListener("click", onClick);
     filtersContainer.appendChild(button); // Ajoute le bouton dans le conteneur
   }
