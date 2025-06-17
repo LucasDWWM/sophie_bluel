@@ -29,6 +29,7 @@
 	</header>
 	<main>
 		<section id="introduction">
+			<h2 class="visually-hidden">Introduction</h2>
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
 			</figure>
@@ -109,7 +110,9 @@
       </div>
       <div class="form-group">
         <label for="category">Catégorie</label>
-        <select id="category" name="category" required></select>
+        <select id="category" name="category" required>
+			<option value="">Choisir une catégorie</option> 
+		</select>
       </div>
 	  <hr class="modal-separator">
       <button type="submit" id="submit-btn" disabled>Valider</button>
